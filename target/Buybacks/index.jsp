@@ -173,10 +173,20 @@
             var textarea = document.getElementById("textArea");
             textarea.value = note;
         }
+
+        function clearBoxes(){
+            for(var i=1; i<=12; i++){
+                var id = i;
+                var checkbox = document.getElementById(id);
+                checkbox.checked = false;
+                obtainNotes();
+            }
+        }
     </script>
 
     <div class="mb-3" style="margin-top: 20px;">
         <button type="button" class="btn btn-outline-primary" onclick="obtainNotes()">Save</button>
+        <button type="button" class="btn btn-outline-danger" onclick="clearBoxes()">Clear</button>
         <h6><label for="textArea" class="form-label" style="margin-top: 10px">Notes</label></h6>
         <textarea class="form-control" id="textArea" rows="3"></textarea>
     </div>
